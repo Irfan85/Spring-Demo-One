@@ -24,7 +24,7 @@
 		
 		<!-- We can also inject literal values -->
 		<property name="emailAddress" value="theCoach@gmail.com" />
-		<property name="team" value="Akkas Ali Khan" />
+		<property name="team" value="Australia" />
 	</bean>
 	
 </beans>
