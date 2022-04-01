@@ -10,11 +10,15 @@ public class HelloSpringApp {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		// Retrieve beans from the Spring container. Here spring will produce the objects itself based on our given configuration
-		// using its object factory. This process is known as the "Inversion of control" as the program itself is deciding when to craete which objects by itself
+		// using its object factory. This process is known as the "Inversion of control" as the program itself is deciding when to create which objects by itself.
+		// If our bean has dependencies, it will create the object with all the dependencies that we have defined in our applicatoinContext.xml file.
+		
 		Coach theCoach = context.getBean("myCoach", Coach.class);
 		
 		// Do whatever we want with the bean
 		System.out.println(theCoach.getDailyWorkout());
+		
+		System.out.println(theCoach.getDailyFortune());
 		
 		// Close the context when we are done
 		context.close();
