@@ -17,6 +17,16 @@
 		<constructor-arg ref="myFortuneSerivce"></constructor-arg>
 	</bean>
 	
+	<bean id="myCricketCoach" class="com.example.springdemo.CricketCoach">
+	
+		<!-- Injecting dependencies using setter method. The property and method names must follow java naming convention for it to work. -->
+		<property name="fortuneService" ref="myFortuneSerivce" />
+		
+		<!-- We can also inject literal values -->
+		<property name="emailAddress" value="theCoach@gmail.com" />
+		<property name="team" value="Akkas Ali Khan" />
+	</bean>
+	
 </beans>
 
 
