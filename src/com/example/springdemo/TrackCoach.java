@@ -19,13 +19,14 @@ public class TrackCoach implements Coach {
 		return "Keep goin on, " + fortuneService.getFortune();
 	}
 	
+	// These init and destroy methods can have any access modifier
 	// Bean init method
-	public void doStartupStuff() {
+	private void doStartupStuff() {
 		System.out.println("TrackCoach: inside method 'doStartupStuff'");
 	}
 	
 	// Bean destroy method
-	public void doCleanupStuff() {
+	private void doCleanupStuff() {
 		System.out.println("TrackCoach: inside method 'doCleanupStuff'");
 	}
 
