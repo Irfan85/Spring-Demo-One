@@ -6,6 +6,9 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
+    
+	<!-- Loading the properties file -->
+	<context:property-placeholder location="classpath:sport.properties"/>
 	
 	<!-- Defining Spring beans. First define the dependencies, then the bean itself. -->
 	<bean id="myFortuneSerivce" class="com.example.springdemo.HappyFortuneService">
@@ -17,14 +20,18 @@
 		<constructor-arg ref="myFortuneSerivce"></constructor-arg>
 	</bean>
 	
+	<bean id="myRandomFortuneService" class="com.example.springdemo.RandomFortune">
+	</bean>
+	
 	<bean id="myCricketCoach" class="com.example.springdemo.CricketCoach">
 	
 		<!-- Injecting dependencies using setter method. The property and method names must follow java naming convention for it to work. -->
-		<property name="fortuneService" ref="myFortuneSerivce" />
+		<property name="fortuneService" ref="myRandomFortuneService" />
 		
 		<!-- We can also inject literal values -->
-		<property name="emailAddress" value="theCoach@gmail.com" />
-		<property name="team" value="Akkas Ali Khan" />
+		<!-- Here, we're injecting properties right from the properties file rather than hardcoding them -->
+		<property name="emailAddress" value="${foo.email}" />
+		<property name="team" value="${foo.team}" />
 	</bean>
 	
 </beans>
