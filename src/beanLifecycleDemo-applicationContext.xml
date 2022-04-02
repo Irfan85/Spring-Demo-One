@@ -11,7 +11,7 @@
 	<bean id="myFortuneSerivce" class="com.example.springdemo.HappyFortuneService">
 	</bean>
 	
-	<bean id="myCoach" scope="prototype" class="com.example.springdemo.TrackCoach">
+	<bean id="myCoach" init-method="doStartupStuff" destroy-method="doCleanupStuff" class="com.example.springdemo.TrackCoach">
 	
 		<!-- Injecting the dependencies into the bean -->
 		<constructor-arg ref="myFortuneSerivce"></constructor-arg>

@@ -18,5 +18,15 @@ public class TrackCoach implements Coach {
 	public String getDailyFortune() {
 		return "Keep goin on, " + fortuneService.getFortune();
 	}
+	
+	// Bean init method
+	public void doStartupStuff() {
+		System.out.println("TrackCoach: inside method 'doStartupStuff'");
+	}
+	
+	// Bean destroy method
+	public void doCleanupStuff() {
+		System.out.println("TrackCoach: inside method 'doCleanupStuff'");
+	}
 
 }
